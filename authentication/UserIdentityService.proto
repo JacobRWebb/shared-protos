@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package UserIdentityService;
+
+option go_package = "./pb/UserIdentityService";
+
+service UserIdentityService {
+  rpc GetUserJWT (GetUserJWTRequest) returns (GetUserJWTResponse) {}
+}
+
+message GetUserJWTRequest {
+  string identifier = 1;
+  string password = 2;
+}
+
+message GetUserJWTResponse {
+  string jwt = 1;
+  string error = 2;
+}
